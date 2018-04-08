@@ -30,6 +30,7 @@
             var database = firebase.database();
             var username = document.getElementById("name").value;
             var password = document.getElementById("password").value;
+            isEligable(username, password);
         }
 
         function sha1(msg) {
@@ -55,6 +56,13 @@
             return tohex(H0)+tohex(H1)+tohex(H2)+tohex(H3)+tohex(H4);
         }
 
+        function isEligable(username, password){
+            firebase.database().ref('/users/' + username).once('value').then(function(snapshot) {
+                if(snapshot.val().password === sha1(password)){
+                    //logged in
+                }
+            });
+        }
     </script>
 </body>
 </html>

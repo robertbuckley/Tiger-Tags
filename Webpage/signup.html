@@ -63,7 +63,7 @@
             return (!str || 0 === str.length);
         }
 
-        function isEligable(username, password, email, database){
+        function isEligable(username, password, email){
             var eligibilities = ["Your username is already in use", "Your password is too short", "Your username is too short"];
             var problems = [];
             if(password.length < 6){
@@ -73,17 +73,14 @@
                 problems.push(2); //username too short
             }
             var usersRef = firebase.database().ref('users/');
-            usersRef.on('value', function(snapshot) {
+            usersRef.once('value', function(snapshot) {
                 if (snapshot.hasChild(username)) {
                     problems.push(0);                 
                 }
                 else{                    
-                    for(var i  = 0; i < problems.length; ++i){
-                        console.log(eligibilities[problems[i]]);        
-                    } 
                     if(problems.length == 0){
                        problems = [];            
-                       writeUserData(username, password, email);
+                       writeUserData(username, sha1(password), email);
                     }
                 }
             });
@@ -91,7 +88,7 @@
 
         function writeUserData(username, password, email) {
             firebase.database().ref('users/' + username).set({password: password, email: email});
-            window.location.href = 'file:///F:/Programs/Scavenger%20Hunt/Webpage/login.html';
+            window.location.href = 'file:///F:/Programs/Tiger%20Tags/Tiger-Tags/webpage/login.html';
         }
     </script>
 </body>
