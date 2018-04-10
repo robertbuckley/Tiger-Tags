@@ -87,8 +87,18 @@
         }
 
         function writeUserData(username, password, email) {
-            firebase.database().ref('users/' + username).set({password: password, email: email});
-            window.location.href = 'file:///F:/Programs/Tiger%20Tags/Tiger-Tags/webpage/login.html';
+            var progress = "";
+            for(var i = 0; i < 20; ++i){
+                //just to test how it looks
+                if(Math.random() < .1){
+                     progress += "1"
+                }
+                else{
+                     progress += "0"    
+                }
+            }
+            firebase.database().ref('users/' + username).set({password: password, email: email, progress: progress});
+            window.location.href = 'login.html';
         }
     </script>
 </body>
