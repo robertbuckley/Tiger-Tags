@@ -57,33 +57,13 @@ input#login:hover, input#signup:hover
 	color: #fff;
 }
 
-p#welcome
-{
-	font-family: "Aileron", "Helvetica", "Verdana", sans-serif;
-	font-weight: bold;
-	font-size: 120%;
-	color: #0055ff;
-}
-
-.content-container
-{
-  width: 95%;
-  margin: auto;
-}
-
-.grid-container {
-  width: 95%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #0055ff;
-  padding: 2px;
 }
 .grid-item {
   background-color: #fff;
   padding: 20px;
   font-size: 30px;
   text-align: center;
+
   
   font-family: "Aileron", "Helvetica", "Verdana", sans-serif;
 	font-weight: bold;
@@ -144,4 +124,4 @@ p#welcome
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
-}
+
