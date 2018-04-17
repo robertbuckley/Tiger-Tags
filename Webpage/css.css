@@ -1,7 +1,7 @@
-body {    
-    margin: auto !important;
-    width: 320px;
-    padding: 50px !important;
+body {
+    margin: auto;
+    padding: 20px 0px 0px 0px;
+    width: 100%;
     display: block;
     overflow-x:hidden;
     overflow-y:hidden;
@@ -18,17 +18,17 @@ label {
 div.container
 {
 	display: block;
-	margin: auto !important;
+	margin: auto;
 	width: 100%;
 }
 
 input#login, input#signup
 {
 	display: block;
-	margin: 10px auto 0px auto !important;
+	margin: 10px auto 0px auto;
 	padding: 11px 20px;
 	width: 100%;
-	height: 50% !important;
+	height: 50%;
 	border: 2px solid #0055ff; background: #fff;
 	
 	font-family: "Aileron", "Helvetica", "Verdana", sans-serif;
@@ -57,47 +57,71 @@ input#login:hover, input#signup:hover
 	color: #fff;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #0055ff;
-  padding: 5px;
 }
 .grid-item {
   background-color: #fff;
   padding: 20px;
   font-size: 30px;
   text-align: center;
+
+  
+  font-family: "Aileron", "Helvetica", "Verdana", sans-serif;
+	font-weight: bold;
+	font-size: 120%;
+	color: #0055ff;
 }
 
 /* Modal Header */
-.modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
 }
 
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}
-
+/* Modal Content */
 .modal-content {
-    position: relative;
-    background-color: #fefefe;
+    /*margin: 0px auto 0px auto !important;*/
     margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    animation-name: animatetop;
-    animation-duration: 0.4s
+    padding: 0px 0px 0px 0px;
+    display: block;
+    width: 50%;
+    max-width: 700px;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*desktop styling*/
+@media (min-width:500px){
+    div.container, .content-container {
+        width: 50%;
+    }
 }
 
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
-}
+
