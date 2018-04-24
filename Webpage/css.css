@@ -76,7 +76,6 @@ input#login:hover, input#signup:hover
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
@@ -88,6 +87,8 @@ input#login:hover, input#signup:hover
 /* Modal Content */
 .modal-content {
     /*margin: 0px auto 0px auto !important;*/
+    left: 50%;
+    transform: translate(25%, 25%);
     margin: auto;
     padding: 0px 0px 0px 0px;
     display: block;
